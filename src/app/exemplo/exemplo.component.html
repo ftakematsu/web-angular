@@ -1,0 +1,18 @@
+<p>
+    Resultado: {{ calcular() }}
+</p>
+
+<p><mat-slide-toggle [(ngModel)]="selecionado">
+    {{ (selecionado) ? "Selecionado" : "Não selecionado" }}
+</mat-slide-toggle></p>
+
+<mat-form-field>
+    <mat-label>Qual seu nome?</mat-label>
+    <input matInput [(ngModel)]="nomeDigitado" placeholder="Escreva aqui">
+</mat-form-field>
+
+<button mat-raised-button (click)="enviar()">Enviar</button>
+
+<div *ngIf="nomeDigitado.length>0">
+    Você digitou: {{nomeDigitado}}
+</div>
