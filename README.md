@@ -2,6 +2,7 @@
 Pré-requisitos:
  - Estar conectado na Internet.
  - Ter o NodeJS instalado na versão mais atualizada.
+ - Ter o Angular instalado de forma global - `npm install -g @angular/cli`
 
 ## Documentações
  - Material Angular: https://material.angular.io/components/categories 
