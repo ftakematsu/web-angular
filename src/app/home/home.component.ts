@@ -10,5 +10,10 @@ import { ListComponent } from './list/list.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  myList: number[] = [10, 20, 30, 40, 50];
+  soma = 0;
 
+  newEvent(event: any) {
+    this.soma = event;
+  }
 }

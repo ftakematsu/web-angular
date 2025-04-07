@@ -7,7 +7,9 @@
             <minha-pagina [valorX]="10"></minha-pagina>
         </mat-tab>
         <mat-tab label="Listas">
-            <app-list></app-list>
+            <app-list [listNumber]="myList" (resultado)="newEvent($event)"></app-list>
+        
+            Soma: {{soma}}
         </mat-tab>
     </mat-tab-group>
     

@@ -1,6 +1,6 @@
-<div>
-    <div *ngFor="let x of listNumber" class="flex justify-center space-x-2">
-        <span>
+<div class="flex justify-center space-x-2 mt-10">
+    <div *ngFor="let x of listNumber">
+        <span (click)="clique(x)" class="p-4 border-1 rounded-lg bg-blue-600 text-white">
             {{x}}
         </span>
     </div>
