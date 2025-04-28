@@ -16,3 +16,7 @@
 <div *ngIf="nomeDigitado.length>0">
     Você digitou: {{nomeDigitado}}
 </div>
+
+<div>
+    {{ mensagem$ | async }}
+</div>

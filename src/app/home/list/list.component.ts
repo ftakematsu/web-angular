@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-list',
@@ -11,9 +12,9 @@ export class ListComponent implements OnInit {
   @Input() listNumber: number[] = [];
   @Output() resultado = new EventEmitter<number>();
   soma: number = 0;
-
-  constructor() {
-    
+  mensagem$: any;
+  constructor(private messageService: MessageService) {
+    this.mensagem$ = this.messageService.mensagem$;
   }
 
   /**
