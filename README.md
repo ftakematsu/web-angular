@@ -7,13 +7,13 @@ Pré-requisitos:
 ## Documentações
  - Material Angular: https://material.angular.io/components/categories 
 
-## Extensões recomenda
+## Extensões recomendas no VSCode
  - Material Icon Theme (melhor visualização dos ícones do projeto).
  - Angular Language Service (para facilitar a programação).
 
 
 ## Execução
- - Abra o terminal Command Prompt (não utilizar o PowerShell).
+ - Abra o terminal Command Prompt (de preferência, não utilizar o PowerShell devido às suas restrições de execução de comandos externos). 
  - Execute `npm install` - cria a pasta `node_modules`.
  - Execute `npm start`
   - Abra o navegador e acesse `localhost:4200`
