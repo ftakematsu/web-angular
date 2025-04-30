@@ -5,7 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MessageService } from '../../services/message.service';
+import { MessageService } from '../../../services/message.service';
 
 @Component({
   selector: 'minha-pagina',
