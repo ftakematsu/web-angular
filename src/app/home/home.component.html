@@ -8,9 +8,15 @@
         </mat-tab>
         <mat-tab label="Listas">
             <app-list [listNumber]="myList" (resultado)="newEvent($event)"></app-list>
-        
             Soma: {{soma}}
         </mat-tab>
+        <mat-tab label="Observador">
+            <button mat-flat-button (click)="incrementarContador()">Incrementar contador</button>
+            <app-observer1></app-observer1>
+            <app-observer2></app-observer2>
+        </mat-tab>
     </mat-tab-group>
+
+    <button mat-raised-button (click)="voltar()">Voltar para início</button>
     
 </div>
