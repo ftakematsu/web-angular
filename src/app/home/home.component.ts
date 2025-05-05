@@ -7,12 +7,15 @@ import { Observer2Component } from './components/observer2/observer2.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CountService } from '../services/count.service';
 import { Router } from '@angular/router';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [
     ExemploComponent, MatTabsModule, ListComponent,
-    Observer1Component, Observer2Component, MatButtonModule
+    Observer1Component, Observer2Component, MatButtonModule,
+    UserListComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
