@@ -24,5 +24,8 @@ export class UserListComponent implements OnInit {
     });
   }
 
+  generateImgLink(id?: number) {
+    return "https://i.pravatar.cc/150?img=" + id;
+  }
 
 }
