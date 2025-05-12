@@ -13,6 +13,8 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
+  cepDigitado: string = '86077080';
+
   constructor(private userService: UserService) {
 
   }
@@ -22,10 +24,24 @@ export class UserListComponent implements OnInit {
       this.users = response;
       console.log(this.users);
     });
+
+    this.buscarCEP();
   }
 
   generateImgLink(id?: number) {
     return "https://i.pravatar.cc/150?img=" + id;
+  }
+
+  buscarCEP() {
+    this.userService.getCEP(this.cepDigitado).subscribe({
+      next: (response) => {
+        console.log(response);
+        console.log(response.localidade);
+      },
+      error: (erro) => {
+        console.error(erro);
+      }
+    });
   }
 
 }
