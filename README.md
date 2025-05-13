@@ -4,15 +4,12 @@ Pré-requisitos:
  - Ter o NodeJS instalado na versão mais atualizada.
  - Ter o Angular instalado de forma global - `npm install -g @angular/cli`
 
-## Documentações
- - Material Angular: https://material.angular.io/components/categories 
-
 ## Extensões recomendas no VSCode
  - Material Icon Theme (melhor visualização dos ícones do projeto).
  - Angular Language Service (para facilitar a programação).
 
-
 ## Execução
+ - Clone o repositório ou faça o download do repositório em formato ZIP.
  - Abra o terminal Command Prompt (de preferência, não utilizar o PowerShell devido às suas restrições de execução de comandos externos). 
  - Execute `npm install` - cria a pasta `node_modules`.
  - Execute `npm start`
@@ -20,3 +17,11 @@ Pré-requisitos:
 
 ## Diretório do projeto
  - Os arquivos do projeto estão em: `src\app`
+
+# Documentações
+ - Material Angular: https://material.angular.io/components/categories
+
+# Criação de um novo projeto
+ - Certifique-se de que tem o NodeJS instalado no computador.
+ - Abra o terminal Command Prompt ou CMD e instale o Angular de forma global - `npm install -g @angular/cli`
+ - Crie um novo projeto por meio do comando: `ng new nome-do-projeto`
