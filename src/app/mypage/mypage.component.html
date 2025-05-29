@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width">
+    <mat-label>Qual seu nome?</mat-label>
+    <input matInput 
+        placeholder="Fulano de Tal" 
+        [(ngModel)]="nome"
+    >
+</mat-form-field>
+
+<div>
+    Você digitou: {{nome}}
+</div>
+
+<button (click)="enviar()">
+    Enviar
+</button>
