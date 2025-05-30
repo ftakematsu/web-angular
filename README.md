@@ -19,7 +19,8 @@ Pré-requisitos:
  - Os arquivos do projeto estão em: `src\app`
 
 # Documentações
- - Material Angular: https://material.angular.io/components/categories
+ - [Material Angular](https://v19.material.angular.dev/components/categories)
+ - [Tailwind CSS](https://v2.tailwindcss.com/docs)
 
 # Criação de um novo projeto
  - Certifique-se de que tem o NodeJS instalado no computador.
