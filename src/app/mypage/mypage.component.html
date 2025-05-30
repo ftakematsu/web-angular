@@ -6,14 +6,22 @@
     >
 </mat-form-field>
 
-<div>
+<div *ngIf="nome.length>0">
     Você digitou: {{nome}}
 </div>
 
-<button (click)="enviar()">
+<button *ngIf="nome.length>0" mat-raised-button (click)="enviar()">
     Enviar
 </button>
 
 <app-mycomponent></app-mycomponent>
 
-<second-comp></second-comp>
+<second-comp>
+    <div class="border-1 p-4">
+        <div *ngFor="let item of lista">
+            <div>
+                Nome: {{item.nome}}, Idade: {{item.idade}} anos.
+            </div>
+        </div>
+    </div>
+</second-comp>
