@@ -1,4 +1,9 @@
 <div class="p-5 m-5">
+
+  <div *ngFor="let item of items">
+    <div>{{item.name}} {{item.value}}</div>
+  </div>
+
     <div *ngFor="let user of users">
         <mat-card class="my-2" appearance="outlined">
             <mat-card-header>

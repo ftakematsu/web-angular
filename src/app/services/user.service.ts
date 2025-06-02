@@ -21,4 +21,8 @@ export class UserService {
     return this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`);
   }
 
+  getItems(): Observable<any> {
+    return this.http.get<any>('http://127.0.0.1:8000/api/items');
+  }
+
 }

@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 export class UserListComponent implements OnInit {
   users: User[] = [];
   cepDigitado: string = '86077080';
-
+  items: any = [];
   constructor(private userService: UserService) {
 
   }
@@ -23,6 +23,10 @@ export class UserListComponent implements OnInit {
     this.userService.getUsers().subscribe((response) => {
       this.users = response;
       console.log(this.users);
+    });
+
+    this.userService.getItems().subscribe((response) => {
+      this.items = response;
     });
 
     this.buscarCEP();
