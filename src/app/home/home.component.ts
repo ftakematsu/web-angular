@@ -25,4 +25,10 @@ export class HomeComponent {
     // Navega para a página identificada pela rota mypage
     this.router.navigate(['mypage']);
   }
+
+  navegar() {
+    this.router.navigate(['exemplo']);
+  }
+
+
 }
