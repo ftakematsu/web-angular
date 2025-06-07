@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
-import { Router } from '@angular/router';
 import { MycomponentComponent } from '../mypage/mycomponent/mycomponent.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +14,10 @@ import { MycomponentComponent } from '../mypage/mycomponent/mycomponent.componen
 })
 export class HomeComponent {
 
-  /** Injeção de dependência para que a classe possa 
-   * utilizar o objeto router
-   */
-  constructor(private router: Router) {
+  constructor(private router: Router) {}
 
+  navegar() {
+    this.router.navigate(['exemplo']);
   }
 
   continuar() {
@@ -26,9 +25,7 @@ export class HomeComponent {
     this.router.navigate(['mypage']);
   }
 
-  navegar() {
-    this.router.navigate(['exemplo']);
-  }
+  
 
 
 }
