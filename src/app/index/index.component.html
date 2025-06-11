@@ -1,4 +1,14 @@
-<div class="flex flex-col space-y-2 content-center w-full justify-center h-full">
-    <p class="text-center">Valor do contador: {{cont}}</p>
-    <button (click)="irParaInicio()" class="m-8 text-center border-1 p-4 rounded-md text-white bg-black">Ir para página inicial</button>
+<div class="flex flex-col space-y-2 content-center w-full p-10 justify-center h-full">
+    <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput [(ngModel)]="email" placeholder="Digite seu e-mail">
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input type="password" [(ngModel)]="password" matInput placeholder="Digite a senha">
+        <mat-icon matSuffix>key</mat-icon>
+    </mat-form-field>
+    
+    <button mat-flat-button (click)="login()">Login</button>
 </div>

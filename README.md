@@ -5,7 +5,7 @@ Pré-requisitos:
  - Ter o Angular instalado de forma global - `npm install -g @angular/cli`
 
 ## Documentações
- - Material Angular: https://material.angular.io/components/categories 
+ - Material Angular: https://v19.material.angular.dev/components/categories
 
 ## Extensões recomenda
  - Material Icon Theme (melhor visualização dos ícones do projeto).

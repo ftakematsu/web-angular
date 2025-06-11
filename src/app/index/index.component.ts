@@ -1,18 +1,31 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountService } from '../services/count.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-index',
-  imports: [],
+  imports: [MatFormFieldModule, MatIconModule, MatInputModule, FormsModule,
+    MatButtonModule
+  ],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
 export class IndexComponent {
+
+  email: string = "";
+  password: string = "";
+
   cont: number = 0;
   constructor(
     private router: Router,
-    private coutService: CountService
+    private coutService: CountService,
+    private authService: AuthService
   ) {
     this.coutService.cont$.subscribe((value) => {
       this.cont = value;
@@ -21,5 +34,16 @@ export class IndexComponent {
 
   irParaInicio() {
     this.router.navigate(['/home']);
+  }
+
+  login() {
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
   }
 }
