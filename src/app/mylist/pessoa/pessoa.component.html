@@ -1,0 +1,19 @@
+<div class="m-2">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                {{pessoa?.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{pessoa?.email}}
+            </mat-card-subtitle>
+            <img mat-card-avatar [src]="getImage()">
+        </mat-card-header>
+        <mat-card-content>
+            Este é um usuário de ID={{pessoa?.id}}.
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button (click)="acao()">Ação</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

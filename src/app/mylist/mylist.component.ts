@@ -5,12 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Pessoa } from './models/pessoa';
+import { PessoaComponent } from './pessoa/pessoa.component';
 
 @Component({
   selector: 'app-mylist',
   imports: [
     MatInputModule, MatFormFieldModule, FormsModule,
-    MatButtonModule, CommonModule
+    MatButtonModule, CommonModule, PessoaComponent
   ],
   templateUrl: './mylist.component.html',
   styleUrl: './mylist.component.css'
@@ -26,5 +27,9 @@ export class MylistComponent {
     let pessoa = new Pessoa(this.id++, this.name, this.email);
     this.lista.push(pessoa);
     
+  }
+
+  remover(pessoa: Pessoa) {
+    this.lista = this.lista.filter(p => p.id != pessoa.id);
   }
 }
