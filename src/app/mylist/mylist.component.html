@@ -1,0 +1,18 @@
+<div class="flex justify-center m-4">
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="name" matInput placeholder="Seu nome">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input [(ngModel)]="email" matInput type="email" placeholder="exemplo@mail.com">
+    </mat-form-field>
+    <button mat-stroked-button (click)="add()">Adicionar</button>
+</div>
+
+<div class="m-4 p-4">
+    <div *ngFor="let pessoa of lista">
+        <span>{{pessoa.id}}</span>
+        <span>{{pessoa.name}}</span>
+    </div>
+</div>

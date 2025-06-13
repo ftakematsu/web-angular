@@ -17,7 +17,7 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   navegar() {
-    this.router.navigate(['exemplo']);
+    this.router.navigate(['list']);
   }
 
   continuar() {
