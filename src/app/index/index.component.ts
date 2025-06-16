@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-index',
@@ -38,11 +39,27 @@ export class IndexComponent {
 
   login() {
     this.authService.login(this.email, this.password).subscribe({
-      next: (response) => {
+      next: (response) => { // Requisição ocorreu na normalidade
         console.log(response);
+
+        // Armazena o token no localStorage
+        this.authService.setToken(response.token);
+
+        if (response.token) {
+          Swal.fire({
+            title: response.mensagem,
+            icon: 'success'
+          });
+        }
+
+        
       },
-      error: (error) => {
-        console.error(error);
+      error: (error) => { // Requisição gerou um erro
+        Swal.fire({
+          title: "Erro",
+          text: "Não foi possível realizar o login. Verifique as credenciais e tente novamente",
+          icon: 'error'
+        });
       }
     });
   }
