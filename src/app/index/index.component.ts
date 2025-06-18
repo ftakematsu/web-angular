@@ -50,6 +50,7 @@ export class IndexComponent {
             title: response.mensagem,
             icon: 'success'
           });
+          this.router.navigate(['home']);
         }
 
         
