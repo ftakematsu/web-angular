@@ -15,6 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      console.info("intercepting");
         // Se a URL da requisição for uma das URLs do ByPass
         // Apenas retornar a requisição sem os headers
         if (this._isBypassUrls(req.url)) {
