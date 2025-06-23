@@ -1,31 +1,35 @@
-// auth.interceptor.ts
-import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { addToken } from "../config/http-header.const";
+import { AuthService } from "../services/auth.service";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
+    // APIs que não terão o cabeçalho de autenticação
+    private bypassUris = [
+        '/login',
+        '/auth', 
+    ];
 
-  constructor() {}
+    constructor(private authService: AuthService) {}
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // Aqui você pega o token, por exemplo, do localStorage
-    const token = localStorage.getItem('accessToken'); // ou use um AuthService
-
-    if (token) {
-      // Clona a request e adiciona o Authorization Header
-      request = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        // Se a URL da requisição for uma das URLs do ByPass
+        // Apenas retornar a requisição sem os headers
+        if (this._isBypassUrls(req.url)) {
+          return next.handle(req);
         }
-      });
+
+        // Obtém o token de autenticação
+        const token = this.authService.getToken();
+        // Adiciona o token ao cabeçalho
+        req = addToken(req, token!);
+        return next.handle(req);
     }
 
-    return next.handle(request);
-  }
+    private _isBypassUrls(url: string): boolean {
+        return this.bypassUris.some((uri) => url.includes(uri));
+    }
+
 }
