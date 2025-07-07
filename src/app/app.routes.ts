@@ -12,5 +12,9 @@ export const routes: Routes = [
     {
         path: 'home', // O que vai aparecer na URL
         loadChildren: () => import('./home/routes/home.routes')
+    },
+    {
+        path: 'chat', // O que vai aparecer na URL
+        loadChildren: () => import('./chat/routes/chat.routes')
     }
 ];
